@@ -1,4 +1,4 @@
-=lgoritmos de Búsqueda y Ordenamiento
+Algoritmos de Búsqueda y Ordenamiento
 
 Este proyecto forma parte de un trabajo integrador para la materia **Programación I**. Implementamos distintos algoritmos clásicos de búsqueda y ordenamiento en Python, y comparamos su rendimiento con medición de tiempos.
 
