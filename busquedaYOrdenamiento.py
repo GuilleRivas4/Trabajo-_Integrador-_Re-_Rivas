@@ -65,6 +65,15 @@ def medir_tiempo(funcion, *args):
     duracion = fin - inicio
     return resultado, duracion
 
+# Medición de tiempo repetida para búsquedas, para tiempos más visibles
+def medir_tiempo_repetido(funcion, lista, objetivo, repeticiones=10000):
+    inicio = time.perf_counter()
+    for _ in range(repeticiones):
+        funcion(lista, objetivo)
+    fin = time.perf_counter()
+    duracion = fin - inicio
+    return duracion / repeticiones  # tiempo promedio por ejecución
+
 # -----------------------------
 # PRUEBAS Y RESULTADOS
 # -----------------------------
@@ -80,10 +89,12 @@ print(f"Quick Sort (Tiempo): {t_quick:.6f} segundos")
 
 # BÚSQUEDA
 # Búsqueda lineal sobre lista desordenada
-_, t_lineal = medir_tiempo(busqueda_lineal, datos, objetivo)
+pos_lineal = busqueda_lineal(datos, objetivo)
+tiempo_lineal_promedio = medir_tiempo_repetido(busqueda_lineal, datos, objetivo)
 
 # Búsqueda binaria sobre lista ordenada
-_, t_binaria = medir_tiempo(busqueda_binaria, orden_quick, objetivo)
+pos_binaria = busqueda_binaria(orden_quick, objetivo)
+tiempo_binaria_promedio = medir_tiempo_repetido(busqueda_binaria, orden_quick, objetivo)
 
-print(f"\nBúsqueda Lineal (Tiempo): {t_lineal:.6f} segundos")
-print(f"Búsqueda Binaria (Tiempo): {t_binaria:.6f} segundos")
+print(f"\nBúsqueda Lineal - posición: {pos_lineal}, tiempo promedio: {tiempo_lineal_promedio:.8f} segundos")
+print(f"Búsqueda Binaria - posición: {pos_binaria}, tiempo promedio: {tiempo_binaria_promedio:.8f} segundos")
