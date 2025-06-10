@@ -20,6 +20,8 @@ Imprime los tiempos de ejecución de cada algoritmo.
 Conclusión
 Este proyecto ayuda a entender por qué algunos algoritmos son más eficientes que otros, y cómo elegir el adecuado según el tipo de problema o cantidad de datos.
 
+Enlace al video: https://youtu.be/8Y3-NPNkHiE
+
 Créditos
 Trabajo realizado por:
 
