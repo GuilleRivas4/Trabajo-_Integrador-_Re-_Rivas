@@ -2,7 +2,7 @@ import time
 import random
 
 # Generamos una lista aleatoria de 100 elementos
-datos = random.sample(range(1, 1000), 100)
+datos = [random.randint(1, 10000) for _ in range(10000)]
 objetivo = datos[50]  # Elegimos un valor que sabemos que está
 
 # -----------------------------
